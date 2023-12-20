@@ -1,10 +1,10 @@
 package com.ex.CRUDApplicatio.model;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.Data;
 
 @Entity
-@Table(name = "Book")
+@Table(name = "book")
 @Data
 public class Book {
 
