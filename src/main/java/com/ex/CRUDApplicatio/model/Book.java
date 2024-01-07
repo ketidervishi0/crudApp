@@ -11,8 +11,16 @@ public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String title;
+    private String publicationDate;
+    private String description;
 
-    private String author;
+    @Column(name = "author_id")
+    private Long authorId; //Todo: convert to authorId, Create Author entity
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "author_id")
+
+    private Author author;
+
 }

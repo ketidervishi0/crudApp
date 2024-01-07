@@ -12,4 +12,10 @@ public class BookRequest {
     @NotBlank(message = "Author can not be null")
     private String author;
 
+    @NotBlank(message = "Description can not be null")
+    private String description;
+
+    @NotBlank(message = "Publication_date can not be null")
+    private String publicationDate;
+
 }

@@ -16,6 +16,8 @@ import java.util.List;
 import static com.ex.CRUDApplicatio.constants.Messages.*;
 
 //Todo: Check Swagger, Git/GitHub
+//Todo: Check One-to-Many (& Co.) relationships [Wap group articles]
+
 
 @RestController
 @RequestMapping(value = "/book")
@@ -65,8 +67,6 @@ public class BookController {
     @PostMapping("/add")
     public ResponseEntity<Object> addBook(@RequestBody @Valid BookRequest bookRequest) {
         try {
-            //book.setAuthor(bookRequest.getAuthor());
-            //book.setTitle(bookRequest.getTitle());
             Book book = modelMapper.map(bookRequest, Book.class);
             book = this.bookService.save(book);
             return RestResponseMapper.map(SUCCESS, HttpStatus.OK, book, RECORD_CREATED);
