@@ -20,6 +20,10 @@ public class AuthorService {
         return authorRepo.findAll();
     }
 
+    public Author findById(Long id) {
+        return authorRepo.findById(id).orElse(null);
+    }
+
     public Author get(Long id) {
         return authorRepo.findById(id).orElse(null);
     }

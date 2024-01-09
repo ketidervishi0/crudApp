@@ -15,12 +15,20 @@ public class Book {
     private String publicationDate;
     private String description;
 
-    @Column(name = "author_id")
+    @Column(name = "author_id", insertable=false, updatable=false)
     private Long authorId; //Todo: convert to authorId, Create Author entity
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "author_id")
 
     private Author author;
 
+
+    @Column(name = "publisher_id")
+    private Long publisherId;
+
+    @ManyToOne
+    @JoinColumn(name = "publisher_id",insertable=false, updatable=false)
+
+    private Publisher publisher;
 }

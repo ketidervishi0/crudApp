@@ -33,6 +33,7 @@ public class AuthorController {
         this.authorService = authorService;
         this.modelMapper = modelMapper;
     }
+
     @GetMapping("/getAllAuthors")
     public ResponseEntity<Object> getAllAuthors() {
         try {
@@ -46,7 +47,7 @@ public class AuthorController {
         }
     }
 
-    @GetMapping("/getById/{id}")
+    @GetMapping("/getAuthorById/{id}")
     public ResponseEntity<Object> getAuthorById(@PathVariable @NotNull Long id) {
 
         try {
@@ -60,7 +61,7 @@ public class AuthorController {
         }
     }
 
-    @PostMapping("/addAa")
+    @PostMapping("/addAuthor")
     public ResponseEntity<Object> addAuthor(@RequestBody @Valid AuthorRequest authorRequest) {
         try {
             Author author = modelMapper.map(authorRequest, Author.class);

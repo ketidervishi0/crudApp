@@ -21,7 +21,6 @@ import static com.ex.CRUDApplicatio.constants.Messages.*;
 
 @RestController
 @RequestMapping(value = "/book")
-//@RequiredArgsConstructor
 public class BookController {
     private final BookService bookService;
     private final ModelMapper modelMapper;
@@ -31,11 +30,6 @@ public class BookController {
         this.modelMapper = modelMapper;
     }
 
-    /**
-     * Returns all books
-     *
-     * @return data : List<Book>
-     */
     @GetMapping("/getAll")
     public ResponseEntity<Object> getAllBooks() {
         try {
